@@ -5,14 +5,19 @@ interface User {
 }
 
 const UsersPage = async() => {
- const res = await fetch('https://jsonplaceholder.typicode.com/users')
+ const res = await fetch(
+  'https://jsonplaceholder.typicode.com/users', 
+  {cache: 'no-store'})
  const users: User[] = await res.json();
   return (
     <>
-    <h1 className='font-bold text-3xl text-blue-300'>Users</h1>
-    <ul>
-      {users.map(user => <li key = {user.id}>{user.name}</li>)}
-    </ul>
+      <h1 className='font-bold text-3xl text-blue-300'>Users</h1>
+      <ul>
+        {users.map(user => 
+        <li key = {user.id}>
+          {user.name}
+        </li>)}
+      </ul>
     </>
   )
 }
