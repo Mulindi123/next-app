@@ -15,7 +15,7 @@ const UsersPage = async() => {
       <p className='text-2xl text-pink-800'>{new Date().toLocaleTimeString()}</p>
       <table className='table table-bordered '>
         <thead>
-          <tr>
+          <tr className='text-xl text-gray-600'>
             <th>Name</th>
             <th>Email</th>
           </tr>
